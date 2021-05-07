@@ -1,2 +1,28 @@
-<!--pages/me/me.wxml-->
-<text>pages/me/me.wxml</text>
+<view class="container">
+  <view class="userinfo">
+    <block wx:if="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    </block>
+    <block wx:else><!--info page-->
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFit"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <block wx:if="{{userInfo.gender}}">
+        <text class="userinfo-gender">帅气小哥哥一枚</text>
+      </block>
+      <block wx:else>
+        <text class="userinfo-gender">漂亮小姐姐一枚</text>
+      </block>
+      <view class="showNumber"> 
+        <text>  手机号：</text>
+        <text>{{testInfo.phoneNumber}}</text>
+      </view>
+      <view class="showAddress"> 
+        <text>收货地址：</text>
+        <text>{{testInfo.address[0]}}</text>
+      </view>
+      <button class="historyRecords" bindtap="historyRecordsTap">历史记录</button>
+      <button class="setting" bindtap="settingTap">设置</button>
+    </block>
+  </view>
+</view>
