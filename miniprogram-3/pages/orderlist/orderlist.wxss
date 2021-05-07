@@ -1,0 +1,20 @@
+/* pages/orderlist/orderlist.wxss */
+
+.item {
+  background: white;
+  border-radius: 5%;
+  padding: 25rpx;
+  text-align: center;
+  color: #757474;
+  font-size: 30rpx;
+  box-shadow: 3rpx 3rpx 10rpx #cec9c9;
+}
+
+.orders {
+  padding-bottom: 25rpx;
+  border-bottom: 5rpx solid #f5f3f3;
+}
+
+.commission {
+  padding-top: 25rpx;
+}

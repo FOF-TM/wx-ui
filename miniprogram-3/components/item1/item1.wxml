@@ -1,0 +1,6 @@
+<view class="item-container" wx:if="{{ tag }}">
+  <view class="item">
+    <text class="content" bindtap="detail">{{ content }}</text>
+    <div class="btn" bindtap="finish">完成</div>
+  </view>
+</view>

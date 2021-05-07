@@ -1,0 +1,5 @@
+<view class="item-container">
+  <view class="item">
+    <text class="content" bindtap="detail">{{ content }}</text>
+  </view>
+</view>

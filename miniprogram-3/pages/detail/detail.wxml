@@ -1,0 +1,8 @@
+<view class="container">
+  <view class="detail">
+    <view class="item">收件人：{{ address }} </view>
+    <view class="item">地点：</view>
+    <view class="item">价格：</view>
+    <view class="item">时间：</view>
+  </view>
+</view>

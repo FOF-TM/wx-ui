@@ -1,0 +1,11 @@
+<!--pages/orderlist/orderlist.wxml-->
+<view class="container">
+  <view class="item">
+    <view class="orders" bindtap="orders">
+      订 单
+    </view>
+    <view class="commission" bindtap="commission">
+      委 托
+    </view>
+  </view>
+</view>

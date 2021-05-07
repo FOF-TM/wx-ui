@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/orderlist/orderlist",
+    "pages/orders/orders",
+    "pages/index/index",
+    "pages/me/me",
+    "components/item1/item1",
+    "components/item2/item2",
+    "pages/commission/commission",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1296db",
+    "navigationBarTitleText": "滴滴打人",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#9B9B9B",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#F8F8F8",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/orderlist/orderlist",
+        "text": "订单",
+        "iconPath": "images/dingdanguanli.png",
+        "selectedIconPath": "images/dingdanguanli-active.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "images/zhuye.png",
+        "selectedIconPath": "images/zhuye-active.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我",
+        "iconPath": "images/jiaoseguanli.png",
+        "selectedIconPath": "images/jiaoseguanli-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

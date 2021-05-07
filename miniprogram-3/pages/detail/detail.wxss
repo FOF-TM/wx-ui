@@ -1,0 +1,27 @@
+/* pages/detail/detail.wxss */
+.item {
+  font-size: 30rpx;
+  padding: 15rpx;
+  font-weight: bold;
+  color: #727070;
+}
+
+.detail {
+  background: white;
+  padding: 25rpx;
+  box-shadow: 3rpx 3rpx 10rpx #cec9c9;
+  border-radius: 2%;
+}
+
+.btn {
+  padding-top: 20rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.finish {
+  padding: 10rpx 40rpx;
+  border-radius: 2em;
+  color: white;
+  background-color: #20b26e
+}
