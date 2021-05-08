@@ -62,21 +62,18 @@ Page({
     
     var data={
       loginfrom:"app",
-      NoticeK: NoticeK,
-      WeightK: WeightK,
-      AmountK: AmountK, 
-      GetPlaceK: GetPlaceK,
-      DefiniteK: DefiniteK,
-      IdentityK: IdentityK,
-      PhoneNumberK: PhoneNumberK,
-      WriteK: WriteK,
-      PaymentK: PaymentK,
+      comments: NoticeK,
+      stuff_weight: WeightK,
+      stuff_number: AmountK, 
+      stuff_address: GetPlaceK,
+      receive_address: DefiniteK,
+      amount: PaymentK,
       output: "json"
     };
     /*var url = "; /*这里是服务器的域名 */
     wx.request({
-        url: "https://api.sopans.com/third/login.php",
-        method: 'GET',
+        url: "http://yuren123.cn:1011/pending/add",
+        method: 'POST',
         data: data,
         header: {
           'Content-Type': 'application/json'
@@ -88,13 +85,22 @@ Page({
               icon: 'success',
               duration: 2000
             })
-        }
-        }
+            }
+          }, 
+            
+          fail(res){
+              wx.showToast({
+                title: '提交失败',
+                icon: 'fail',
+                duration: 2000
+            })
+         }    
+        })   
+          
+        
+       
+       
+        
    
-      })
-   
-
-
-
-    }  
+     }  
     })

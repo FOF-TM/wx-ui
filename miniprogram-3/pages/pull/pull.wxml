@@ -25,10 +25,10 @@
   enable-back-to-top="true"
   bindrefresherrefresh="onPullDownRefresh"
   bindscrolltolower="onReachBottom">
-    <view wx:for="{{ dates }}" wx:key="*this">
+    <view wx:for="{{ datalist }}" wx:key="*this">
       <view class="date">{{ item }}</view>
-      <block wx:for="{{ pullList[item] }}" wx:key="id">
-        <item3 amount="{{ item.amount }}" start="{{ item.start }}" finish="{{ item.finish }}" money="{{ item.money }}" date="{{ item.date }}" wx:if="*this.tag"></item3>
+      <block wx:for="{{ datalist[item] }}" wx:key="id">
+        <item3 amount="{{ item.stuff_number }}" weight="{{ item.stuff_weight }}" start="{{ item. stuff_address }}" finish="{{ item.receive_address }}" money="{{ item.amount }}" date="{{ item.date }}" wx:if="*this.tag"></item3>
       </block>
     </view>
   </scroll-view>

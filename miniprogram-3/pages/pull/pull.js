@@ -1,5 +1,5 @@
 // pages/mainpage/mainpage.js
-/*Page({
+Page({
     data: {
       datalist: [], 
       pagenum: 1
@@ -8,13 +8,13 @@
   getdatalist: function () { //可在onLoad中设置为进入页面默认加载
     var that = this;
      wx.request({
-       url: '请求地址',
+       url: 'http://yuren123.cn:1011/pending/query/all/' + that.data.pagenum,
        data: {
          "key": "某入参value",
          "pageNum": that.data.pagenum, //从数据里获取当前页数
          "pageSize": 10, //每页显示条数
        },
-       method: "POST",
+       method: "GET",
        success: function (res) {
          var arr1 = that.data.datalist; //从data获取当前datalist数组
          var arr2 = res.data; //从此次请求返回的数据中获取新数组
@@ -26,13 +26,13 @@
        fail: function (err) { },//请求失败
        complete: function () { }//请求完成后执行的函数
      })
-   },  */
+   },  
   
 
   /**
    * 生命周期函数--监听页面加载
    */
- /* onLoad: function (options) {
+  onLoad: function (options) {
     this.getdatalist();
   },
 
@@ -74,7 +74,7 @@
   /**
    * 页面上拉触底事件的处理函数
    */
-  /*onReachBottom: function () {
+  onReachBottom: function () {
     var that=this;
     var pagenum = that.data.pagenum + 1; //获取当前页数并+1
     that.setData({
@@ -86,7 +86,7 @@
   /**
    * 用户点击右上角分享
    */
-  /*onShareAppMessage: function () {
+  onShareAppMessage: function () {
     return{
       title:"分享"
     } 
@@ -115,16 +115,22 @@
               wx.stopPullDownRefresh();//停止下拉刷新
           }
     })   
-  },*/
+  },
   /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  /*onPullDownRefresh: function () {
+   * 页面相关事件处理函数--监听用户下拉动作*/
+   
+  onPullDownRefresh: function () {
       //调用刷新时将执行的方法
     this.onRefresh();
   }
-})*/
-Page({
+})
+
+
+
+
+
+
+/*Page({
   data: {
     pullList: {},
     dates: [],
@@ -145,6 +151,7 @@ Page({
 
   onLoad: function() {
     var app = getApp().globalData;
+    
     this.setData({
       pullList: app.pullList,
       dates: app.dates
@@ -152,3 +159,4 @@ Page({
   }
 
 })
+*/
