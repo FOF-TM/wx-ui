@@ -1,0 +1,11 @@
+<view class="container">
+  <image class="about-banner" src="/images/name1.jpg"></image>
+  <text style='font-weight: bold;font-size:60rpx;'>主页</text>
+  <button bindtap='f0' type="default">我要下单</button>
+  <button bindtap='f1' type="default">我要接单</button>
+   
+   
+ 
+  
+
+</view>

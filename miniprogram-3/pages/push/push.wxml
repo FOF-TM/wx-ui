@@ -1,0 +1,42 @@
+<view class="container">
+ <view class="detail">
+   
+<view class="textedit">
+  <text >注意事项</text>
+  <input  class="InputForm" placeholder="请输入注意事项" bindinput="NoticementInput"></input>
+</view>
+<view class="textedit">
+  <text >物品重量</text>
+<input  class="InputForm" bindinput="WeightInput" placeholder="请输入重量" />
+</view>
+<view class="textedit">
+  <text >物品数量</text>
+  <input  class="InputForm" bindinput="AmountInput" placeholder="请输入物品数量"/>
+</view>
+<view class="textedit">
+  <text >取货地点</text>
+ <input  class="InputForm" bindinput="GetPlaceInput" placeholder="请输入取货地点"/>
+</view>
+<view class="textedit">
+  <text >目标地点</text>
+ <input  class="InputForm" bindinput="DefiniteInput" placeholder="请输入目标地点"/>
+</view>
+<view class="textedit">
+  <text >身份信息</text>
+ <input  class="InputForm" bindinput="IdentityInput" placeholder="请输入收货人身份信息"/>
+</view>
+<view class="textedit">
+  <text >电话号码</text>
+ <input  class="InputForm" bindinput="PhoneNumberInput" placeholder="请在这里输入收货人电话"/>
+</view>
+<view class="textedit">
+  <text >备注信息</text>
+ <input  class="InputForm" bindinput="WriteInput" placeholder="请输入收货人备注"/>
+</view>
+<view class="textedit">
+  <text >预期付费</text>
+ <input  class="InputForm" bindinput="PaymentInput" placeholder="请输入预期付费"/>
+</view>
+ <button type="default" bindtap="pushInfo">提交</button> 
+</view>
+</view>

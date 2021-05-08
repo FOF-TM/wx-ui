@@ -1,0 +1,25 @@
+.item-container {
+  background: white;
+  padding: 25rpx;
+  box-shadow: 3rpx 3rpx 10rpx #cec9c9;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+.content {
+  flex: 1;
+  font-size: 30rpx;
+  color: #9B9B9B;
+}
+
+.btn {
+  padding: 10rpx 20rpx;
+  margin: 0rpx 10rpx;
+  border-radius: 2em;
+  float: right;
+  font-size: 30rpx;
+  color: white;
+  background-color: #20b26e
+}

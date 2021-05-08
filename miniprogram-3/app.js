@@ -58,8 +58,22 @@ App({
         {content: "到食堂取快递", id: "1", date: "2021-4-28"},
         {content: "到浴室取快递", id: "3", date: "2021-4-28"}, 
         {content: "到食堂取快递", id: "4", date: "2021-4-28"}
-      ]
-    },
+      ]},
+      pullList:{
+        "2021-4-30":[  
+          {amount:"1", start:"东北大学浑南校区图书馆",finish:"东北大学生科楼",money:"10",id:"0",date: "2021-4-30"},
+          {amount:"1", start:"东北大学一舍",finish:"东北大学文管楼",money:"10",id:"1",date: "2021-4-30"}
+        ],
+        "2021-4-28":[  
+          {amount:"1", start:"东北大学小西门",finish:"东北大学东门",money:"10",id:"0", date: "2021-4-28"},
+          {amount:"2", start:"东北大学五舍",finish:"风雨操场",money:"20",id:"1", date: "2021-4-28"},
+          {amount:"3", start:"东北大学西门",finish:"小南湖",money:"10",id:"2", date: "2021-4-28"},
+          {amount:"2", start:"东北大学南湖校区",finish:"东北大学浑南校区",money:"50",id:"3", date: "2021-4-28"}
+        ]},
+      
+     
+      
+    
     dates: [
       "2021-4-30",
       "2021-4-28"

@@ -1,0 +1,36 @@
+<!--pages/mainpage/mainpage.wxml-->
+<!--<view class="page-section-spacing">
+        <scroll-view scroll-y="true" 
+            style="height:900rpx;"
+         bindscrolltoupper="upper"
+         
+         bindscroll="scroll" 
+        
+         scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+          <view  class="scroll-view-items" wx:for="{{pullList}}" wx:key="key">
+            <text >数量：{{item.amount}}</text>
+            <text>取货地址：{{item.start}}</text>
+            <text>送达地址：{{item.finish}}</text>
+            <text>金额：{{item.money}}</text>
+            <button bindtap='s1' type="default">接单</button>
+          </view>
+          
+        </scroll-view>
+  </view>-->
+
+  <view style="padding:0rpx 25rpx; background: #f5f3f3;">
+  <scroll-view class="scroll-list" 
+  scroll-y="true" 
+  refresher-enabled="true"
+  enable-back-to-top="true"
+  bindrefresherrefresh="onPullDownRefresh"
+  bindscrolltolower="onReachBottom">
+    <view wx:for="{{ dates }}" wx:key="*this">
+      <view class="date">{{ item }}</view>
+      <block wx:for="{{ pullList[item] }}" wx:key="id">
+        <item3 amount="{{ item.amount }}" start="{{ item.start }}" finish="{{ item.finish }}" money="{{ item.money }}" date="{{ item.date }}" wx:if="*this.tag"></item3>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+
