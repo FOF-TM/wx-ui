@@ -12,7 +12,11 @@
                 receive_addr="{{ item.receive_address }}"
                 key="{{ item.id }}" 
                 uid="{{ item.id }}" 
-                date="{{ item.date }}"></item1>
+                date="{{ item.timestamp }}"
+                weight="{{ item.stuff_weight }}"
+                comments="{{ item.comments }}"
+                number="{{ item.stuff_number }}"
+                amount="{{ item.amount }}"></item1>
       </block>
     </view>
   </scroll-view>

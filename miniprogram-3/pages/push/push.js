@@ -60,7 +60,7 @@ Page({
                   },
                   GetTeleNumber:function(){
                      wx.request({
-                      url: "http://yuren123.cn:1011/me/tele/update",  //后台接口
+                      url: getApp().globalData.globalUrl + "/me/tele/update",  //后台接口
                       data:{
                        uuid: getApp().globalData.data.uuid,
                        tele:"13312296386"
@@ -87,7 +87,7 @@ Page({
                           success: res => {
                             var that = this
                             wx.request({
-                              url: "http://yuren123.cn:1011/auth/login",  //后台接口
+                              url: getApp().globalData.globalUrl + "/auth/login",  //后台接口
                               data:{
                                 "code": res.code,
                                 "appid": "wxa492b8f990c466b7",
@@ -100,7 +100,7 @@ Page({
                                 console.log(resa);
                                 // that.data.uuid = res.uuid
                                 wx.request({
-                                  url: "http://yuren123.cn:1011/test/loginTest",
+                                  url: getApp().globalData.globalUrl + "/test/loginTest",
                                   method: "POST",
                                   data: {
                                     uuid: resa.data.uuid
@@ -145,7 +145,7 @@ Page({
     };
     /*var url = "; /*这里是服务器的域名 */
     wx.request({
-        url: "http://yuren123.cn:1011/pending/add",
+        url: getApp().globalData.globalUrl + "/pending/add",
         method: 'POST',
         data: data,
         header: {

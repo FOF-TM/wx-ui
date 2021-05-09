@@ -4,29 +4,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-    receiver: "",
-    address: "",
-    price: "",
-    date: ""
+    date: "",
+    weight: "",
+    number: "",
+    tele: "",
+    stuff_addr: "",
+    receive_addr: "",
+    comments: "",
+    amount: ""
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    if(options.tag == "true") {
-      this.setData({
-        tag: true,
-        address: options.id
-      })
-    }
-    else {
-      this.setData({
-        tag: false,
-        address: options.id
-      })
-    }
-    
+  onLoad: function (opt) {
+    console.log(opt)
+    this.setData({
+      date: opt.date,
+      weight: opt.weight,
+      number: opt.number,
+      tele: opt.tele,
+      stuff_addr: opt.stuff_addr,
+      receive_addr: opt.receive_addr,
+      comments: opt.comments,
+      amount: opt.amount
+    })
   },
+    
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

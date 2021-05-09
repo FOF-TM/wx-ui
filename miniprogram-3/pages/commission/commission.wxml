@@ -10,9 +10,12 @@
         <item2 tele="{{ item.buyer_tele }}"
                 stuff_addr="{{ item.stuff_address }}"
                 receive_addr="{{ item.receive_address }}"
-                key="{{ item.id }}" 
-                uid="{{ item.id }}" 
-                date="{{ item.date }}"></item2>
+                key="{{ item.id }}"  
+                date="{{ item.timestamp }}"
+                weight="{{ item.stuff_weight }}"
+                comments="{{ item.comments }}"
+                number="{{ item.stuff_number }}"
+                amount="{{ item.amount }}"></item2>
       </block>
     </view>
   </scroll-view>
