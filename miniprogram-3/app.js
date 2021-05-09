@@ -47,6 +47,7 @@ App({
   //   })
   },
   globalData: {
+    uuid: "",
     globalUrl: "http://yuren123.cn:1011",
     userInfo: null,
     orderList: {

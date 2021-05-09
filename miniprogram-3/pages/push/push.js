@@ -58,12 +58,12 @@ Page({
                       })
                     }
                   },
-                  GetTeleNumber:function(){
+                 /* GetTeleNumber:function(){
                      wx.request({
-                      url: getApp().globalData.globalUrl + "/me/tele/update",  //后台接口
+                      url: "http://172.22.18.44:5000/me/tele/update",  //后台接口
                       data:{
-                       uuid: getApp().globalData.data.uuid,
-                       tele:"13312296386"
+                       uuid: getApp().globalData.uuid,
+                       tele:"13390121840"
                       },   //传递给后台使用的code
                       method:"POST",
                       success:function(resa){
@@ -87,11 +87,11 @@ Page({
                           success: res => {
                             var that = this
                             wx.request({
-                              url: getApp().globalData.globalUrl + "/auth/login",  //后台接口
+                              url: "http://172.22.18.44:5000/auth/login",  //后台接口
                               data:{
                                 "code": res.code,
-                                "appid": "wxa492b8f990c466b7",
-                                "secret": "aa9d35aeef00ee1e9757c4bfb5e96499",
+                                "appid": "wxe36d7548e4c6149f",
+                                "secret": "5c8ddb80948479c0d5262d076bf08a36",
                                 "raw_data": this.data.rawData,
                                 "signature": this.data.signature
                               },   //传递给后台使用的code
@@ -100,7 +100,7 @@ Page({
                                 console.log(resa);
                                 // that.data.uuid = res.uuid
                                 wx.request({
-                                  url: getApp().globalData.globalUrl + "/test/loginTest",
+                                  url: "http://172.22.18.44:5000/test/loginTest",
                                   method: "POST",
                                   data: {
                                     uuid: resa.data.uuid
@@ -117,7 +117,7 @@ Page({
                         })
                       }
                     })
-                  },
+                  },*/
 
     pushInfo:function(event){
     var NoticeK=this.data.NoticeK;
@@ -140,7 +140,7 @@ Page({
       stuff_address: GetPlaceK,
       receive_address: DefiniteK,
       amount: PaymentK,
-      uuid:"07111d4d4e8232c3a2d4c35c02575f64",
+      uuid:getApp().globalData.uuid,
       output: "json"
     };
     /*var url = "; /*这里是服务器的域名 */
@@ -153,6 +153,11 @@ Page({
         },
         success(res) {
           console.log(res.data)
+          wx.showToast({
+            title: '成功',
+            icon: 'success',
+            duration: 2000
+          })
           /*if(res.data.code=200){
             wx.showToast({
               title: '成功',
@@ -170,11 +175,5 @@ Page({
             })
          }    
         })   
-          
-        
-       
-       
-        
-   
      }  
     })

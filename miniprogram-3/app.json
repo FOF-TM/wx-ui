@@ -10,7 +10,8 @@
     "pages/detail/detail",
     "pages/pull/pull",
     "pages/push/push",
-    "pages/info/info"
+    "pages/info/info",
+    "pages/hasNotCommission/hasNotCommission"
   ],
   "window": {
     "backgroundTextStyle": "light",

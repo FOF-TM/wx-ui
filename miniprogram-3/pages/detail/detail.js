@@ -4,14 +4,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    date: "",
-    weight: "",
-    number: "",
-    tele: "",
-    stuff_addr: "",
-    receive_addr: "",
-    comments: "",
-    amount: ""
+    date: "2021/5/30",
+    weight: "20kg",
+    number: "2",
+    tele: "13312296386",
+    stuff_addr: "食堂",
+    receive_addr: "五舍A414",
+    comments: "速度",
+    amount: "10元"
   },
   /**
    * 生命周期函数--监听页面加载

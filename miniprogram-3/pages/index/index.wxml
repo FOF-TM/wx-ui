@@ -1,13 +1,10 @@
 <view class="tainer">
   <image class="about-banner" src="/images/name1.jpg"></image>
   <text style='font-weight: bold;font-size:60rpx;'>主页</text>
-  <button bindtap='f0' type="default">我要下单</button>
-  <button bindtap='f1' type="default">我要接单</button>
+  <view class="shuiping">
+  <view class="btn" bindtap='f0' >我要下单</view>
+  <view class="btn" bindtap='f1' type="default">我要接单</view>
+  </view>
   <button bindtap='getUserProfile' type="default">登录</button>
-  <button bindtap='GetTeleNumber' type="default">发送电话号码</button>
-   
-   
- 
-  
-
+ <!-- <button bindtap='GetTeleNumber' type="default">发送电话号码</button>-->
 </view>

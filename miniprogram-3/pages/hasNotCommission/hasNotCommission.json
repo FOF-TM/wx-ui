@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "滴滴打人 · 委托",
+  "usingComponents": {
+    "item2": "/components/item2/item2"
+  }
+}

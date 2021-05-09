@@ -13,7 +13,7 @@ Page({
       url: getApp().globalData.globalUrl + '/active/query/i-fetch/' + this.data.page,
       method: "GET",
       data: {
-        uuid: "07111d4d4e8232c3a2d4c35c02575f64"
+        uuid: getApp().globalData.uuid
       },
       success: res => {
         if(res.statusCode !== 200) {
@@ -56,7 +56,7 @@ Page({
       url: getApp().globalData.globalUrl + '/active/query/i-fetch/1',
       method: "GET",
       data: {
-        uuid: "07111d4d4e8232c3a2d4c35c02575f64"
+        uuid: getApp().globalData.uuid
       },
       success: res => {
         console.log(res);

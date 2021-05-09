@@ -17,4 +17,10 @@
 
 .commission {
   padding-top: 25rpx;
+  padding-bottom: 25rpx;
+  border-bottom: 5rpx solid #f5f3f3;
+}
+
+.hasNotCommission {
+  padding-top: 25rpx;
 }

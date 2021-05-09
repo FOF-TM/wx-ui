@@ -13,7 +13,7 @@ Page({
     wx.request({
      url: "http://yuren123.cn:1011/me/tele/update",  //后台接口
      data:{
-      uuid: getApp().globalData.data.uuid,
+      uuid: getApp().globalData.uuid,
       tele:"13390121840"
      },   //传递给后台使用的code
      method:"POST",
@@ -50,6 +50,7 @@ Page({
              success:function(resa){
                console.log(resa);
                // that.data.uuid = res.uuid
+               getApp().globalData.uuid = resa.data.uuid;
                wx.request({
                  url: "http://yuren123.cn:1011/test/loginTest",
                  method: "POST",
@@ -57,7 +58,7 @@ Page({
                    uuid: resa.data.uuid
                  },
                  success: function(res) {
-                   getApp().globalData.data = resa.data;
+                   
                    console.log(resa.data.uuid);
                    console.log(res);
                  }

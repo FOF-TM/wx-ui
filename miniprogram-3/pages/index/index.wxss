@@ -14,3 +14,16 @@
   height:375rpx;
   border-radius:50%;
 }
+.btn {
+  padding: 40rpx 80rpx;
+  margin: 0rpx 10rpx;
+  border-radius: 2em;
+  float: right;
+  font-size: 30rpx;
+  color: white;
+  background-color: #20b26e
+}
+.shuiping{
+  flex-direction:column;
+  
+}

@@ -28,9 +28,8 @@
     <view wx:for="{{ date }}" wx:key="*this">
       <view class="date">{{ item }}</view>
       <block wx:for="{{ datalist[item] }}" wx:key="index">
-        <item3 amount="{{ item.stuff_number }}" weight="{{ item.stuff_weight }}" start="{{ item.stuff_address }}" finish="{{ item.receive_address }}" money="{{ item.amount }}" post_id="{{item.id}}" ></item3>
+        <item3 amount="{{ item.stuff_number }}" weight="{{ item.stuff_weight }}" start="{{ item.stuff_address }}" finish="{{ item.receive_address }}" money="{{ item.amount }}" post_id="{{item.id}}" post_tele="{{ item.buyer_tele}}" post_comments="{{items.comments}}"  ></item3>
       </block>
     </view>
   </scroll-view>
 </view>
-

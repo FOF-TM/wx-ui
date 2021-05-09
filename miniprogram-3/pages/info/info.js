@@ -12,7 +12,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var id = options.id;
+    var telenumber = options.telenumber;
+    var comment = options.comment;
+    this.setData({
+      id: id,
+      telenumber: telenumber,
+      comment: comment
+    })
   },
 
   /**

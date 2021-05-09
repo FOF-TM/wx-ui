@@ -1,0 +1,13 @@
+/* pages/hasNotCommission/hasNotCommission.wxss */.scroll-list {
+  height: 100vh;
+}
+
+.date {
+  background: white;
+  font-size: 30rpx;
+  border-left: 8rpx solid #21afd3;
+  padding: 15rpx;
+  margin-top: 20rpx;
+  font-weight: bold;
+  color: rgb(114, 112, 112);
+}

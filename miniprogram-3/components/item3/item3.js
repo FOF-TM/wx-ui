@@ -29,6 +29,14 @@ Component({
       type: Number,
       value: 5
     },
+    post_tele:{
+      type:String,
+      value:''
+    } ,  
+    post_comments:{
+      type:String,
+      value:''
+    },
     tag: {
       type: Boolean,
       value: true
@@ -45,9 +53,11 @@ Component({
       var date = this.properties.date;
       var money = this.properties.money;
       var amount = this.properties.amount;
+      var telenumber = this.properties.post_tele;
+      var comment = this.properties.post_comments;
       
       wx.navigateTo({
-        url: '/pages/info/info?id=' + id + "&tag=" + true + "&date=" + date
+        url: '/pages/info/info?id=' + id + "&telenumber=" + telenumber + "&comment=" + comment
       })
     },
     finish: function() {
@@ -67,10 +77,10 @@ Component({
         itemList: ['确定接单'],
         success (res) {
            wx.request({
-             url: "http://yuren123.cn:1011/pending/fetch",
+             url: getApp().globalData.globalUrl + "/pending/fetch",
              method: 'POST',
              data: {
-              uuid: "07111d4d4e8232c3a2d4c35c02575f64", 
+              uuid:  getApp().globalData.uuid, 
               key: that.properties.post_id
              },
              header: {
@@ -78,15 +88,12 @@ Component({
                  },
              success(event) {
                 //console.log(event);
-                console.log(event);
                 
-               /*if(event.data.code=200){
-                wx.showToast({
-                 title: '成功',
-                icon: 'success',
-                duration: 2000
-               })
-                }*/
+                if(event.data="OK!"){
+                  that.setData({
+                  tag: false
+                })
+              }
               
 
 

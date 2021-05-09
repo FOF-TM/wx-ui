@@ -12,7 +12,7 @@ Page({
        url: getApp().globalData.globalUrl + '/pending/query/all/' + that.data.pagenum,
        data: {
          //"key": "某入参value",
-         uuid: "07111d4d4e8232c3a2d4c35c02575f64",
+         uuid: getApp().globalData.uuid,
         //  "pageNum": that.data.pagenum, //从数据里获取当前页数
         //  "pageSize": 10, //每页显示条数
        },
@@ -23,7 +23,7 @@ Page({
         var newdata = res.data; //从此次请求返回的数据中获取新数组
          var dates = that.data.date; 
          var items = res.data.items;
-         console.log(items.length);
+         //console.log(items.length);
          for(var i = 0;i<items.length;i++){
              var date = items[i].timestamp.split(" ")[0];
              if(date in dataList) {
@@ -34,20 +34,20 @@ Page({
               dataList[date].push(newdata.items[i]);
              }
               
-             console.log(newdata.items[i]);
-             console.log(date);
+            // console.log(newdata.items[i]);
+            // console.log(date);
             if(!dates.includes(date)){
               dates.push(date)
             }
             }
-            console.log(dataList);
+           // console.log(dataList);
             that.setData({
               datalist: dataList,
               date: dates
             })
         // var timestamp = time
 
-         console.log(dates);
+        //console.log(dates);
          
          
        },
