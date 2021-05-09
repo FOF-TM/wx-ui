@@ -3,6 +3,8 @@
   <text style='font-weight: bold;font-size:60rpx;'>主页</text>
   <button bindtap='f0' type="default">我要下单</button>
   <button bindtap='f1' type="default">我要接单</button>
+  <button bindtap='getUserProfile' type="default">登录</button>
+  <button bindtap='GetTeleNumber' type="default">发送电话号码</button>
    
    
  

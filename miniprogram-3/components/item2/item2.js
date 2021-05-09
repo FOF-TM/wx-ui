@@ -1,13 +1,38 @@
 Component({
 
   properties: {
-    content: {
+    tele: {
       type: String,
       value: ''
     },
-    uid: {
+    stuff_addr: {
       type: String,
       value: ''
+    },
+
+    receive_addr: {
+      type: String,
+      value: ''
+    },
+
+    uid: {
+      type: Number,
+      value: 0
+    },
+
+    key: {
+      type: Number,
+      value: null
+    },
+
+    date: {
+      type: String,
+      value: ''
+    },
+    
+    tag: {
+      type: Boolean,
+      value: true
     }
   },
 

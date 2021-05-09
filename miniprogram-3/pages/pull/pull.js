@@ -1,27 +1,55 @@
 // pages/mainpage/mainpage.js
 Page({
     data: {
-      datalist: [], 
+      date:[],
+      datalist: new Map(), 
       pagenum: 1
   },
   
   getdatalist: function () { //可在onLoad中设置为进入页面默认加载
     var that = this;
      wx.request({
-       url: 'http://yuren123.cn:1011/pending/query/all/' + that.data.pagenum,
+       url: getApp().globalData.globalUrl + '/pending/query/all/' + that.data.pagenum,
        data: {
-         "key": "某入参value",
-         "pageNum": that.data.pagenum, //从数据里获取当前页数
-         "pageSize": 10, //每页显示条数
+         //"key": "某入参value",
+         uuid: "07111d4d4e8232c3a2d4c35c02575f64",
+        //  "pageNum": that.data.pagenum, //从数据里获取当前页数
+        //  "pageSize": 10, //每页显示条数
        },
        method: "GET",
        success: function (res) {
-         var arr1 = that.data.datalist; //从data获取当前datalist数组
-         var arr2 = res.data; //从此次请求返回的数据中获取新数组
-         arr1 = arr1.concat(arr2); //合并数组
-         that.setData({
-           datalist: arr1 //合并后更新datalist
-         })
+        console.log(res);
+        var dataList = that.data.datalist; //从data获取当前datalist数组
+        var newdata = res.data; //从此次请求返回的数据中获取新数组
+         var dates = that.data.date; 
+         var items = res.data.items;
+         console.log(items.length);
+         for(var i = 0;i<items.length;i++){
+             var date = items[i].timestamp.split(" ")[0];
+             if(date in dataList) {
+               dataList[date].push(newdata.items[i])
+             }
+             else {
+              dataList[date] = []
+              dataList[date].push(newdata.items[i]);
+             }
+              
+             console.log(newdata.items[i]);
+             console.log(date);
+            if(!dates.includes(date)){
+              dates.push(date)
+            }
+            }
+            console.log(dataList);
+            that.setData({
+              datalist: dataList,
+              date: dates
+            })
+        // var timestamp = time
+
+         console.log(dates);
+         
+         
        },
        fail: function (err) { },//请求失败
        complete: function () { }//请求完成后执行的函数
@@ -34,6 +62,7 @@ Page({
    */
   onLoad: function (options) {
     this.getdatalist();
+    
   },
 
   /**

@@ -38,5 +38,7 @@
  <input  class="InputForm" bindinput="PaymentInput" placeholder="请输入预期付费"/>
 </view>
  <button type="default" bindtap="pushInfo">提交</button> 
+ <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile">登录</button>
+ <button wx:if="{{PostTeleNumber}}" bindtap="GetTeleNumber">发送电话号码</button>
 </view>
 </view>

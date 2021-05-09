@@ -1,18 +1,36 @@
 Component({
 
   properties: {
-    content: {
+    tele: {
       type: String,
       value: ''
     },
+
+    stuff_addr: {
+      type: String,
+      value: ''
+    },
+
+    receive_addr: {
+      type: String,
+      value: ''
+    },
+
     uid: {
       type: Number,
       value: 0
     },
+
+    key: {
+      type: Number,
+      value: null
+    },
+
     date: {
       type: String,
       value: ''
     },
+    
     tag: {
       type: Boolean,
       value: true
@@ -38,14 +56,24 @@ Component({
       var date = this.properties.date;
       var index = this.properties.id;
       var that = this;
+
+      // 订单完成
       wx.showActionSheet({
         itemList: ['确定订单完成'],
         success (res) {
-          list[date].splice(index, 1);
-          if(list[date].length === 0) 
-            datelist.remove(date)
-          that.setData({
-            tag: false
+          wx.request({
+            url: 'http://yuren123.cn:1011/active/finish',
+            data: {
+              uuid: "07111d4d4e8232c3a2d4c35c02575f64",
+              key: that.properties.key
+            },
+            method: "POST",
+            success: res=> {
+              that.setData({
+                tag: false
+              })
+              console.log(res);
+            }
           })
         },
         fail (res) {

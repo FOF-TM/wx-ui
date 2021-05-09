@@ -47,6 +47,7 @@ App({
   //   })
   },
   globalData: {
+    globalUrl: "http://yuren123.cn:1011",
     userInfo: null,
     orderList: {
       "2021-4-30": [
@@ -58,10 +59,9 @@ App({
         {content: "到食堂取快递", id: "1", date: "2021-4-28"},
         {content: "到浴室取快递", id: "3", date: "2021-4-28"}, 
         {content: "到食堂取快递", id: "4", date: "2021-4-28"}
-      ]}
+      ]},
     dates: [
-      "2021-4-30",
-      "2021-4-28"
+      
     ]
   }
 })

@@ -1,5 +1,15 @@
 <view class="item-container">
   <view class="item">
-    <text class="content" bindtap="detail">{{ content }}</text>
+    <view class="content" bindtap="detail">
+      <view>
+        电话：{{ tele }}
+      </view>
+      <view>
+        物品地点：{{ stuff_addr }}
+      </view>
+      <view>
+        接收地点：{{ receive_addr }}
+      </view>
+    </view>
   </view>
 </view>
