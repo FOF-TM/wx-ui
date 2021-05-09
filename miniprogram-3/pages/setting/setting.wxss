@@ -1,0 +1,58 @@
+/* pages/setting/setting.wxss */
+
+.container {
+  padding: 25rpx;
+  background: #f5f3f3;
+  height: 100vh;
+}
+
+.showNumber {
+    background: white;
+    padding: 25rpx 25rpx;
+}
+
+.addressTitle {
+    margin-top: 25rpx;
+    margin-bottom: 5rpx;
+    background: white;
+    padding: 25rpx 25rpx;
+}
+
+.textType {
+    float:left;
+}
+
+.addressItem {
+    height:100rpx;
+    font-size: 30rpx;
+    background: white;
+    padding: 10rpx 25rpx;
+}
+
+input {
+    color:#acac9c;
+    border-bottom: 1rpx solid gray;
+}
+
+.buttonType {
+    color:#19d819;
+    float: right;
+}
+
+.buttonItemType1 {
+    background:#20c544;
+    color:white;
+    border-radius: 2em;
+    float:right;
+    padding:10rpx 25rpx;
+    font-size:20rpx;
+}
+
+.buttonItemType2 {
+    background:#e04747;
+    color:white;
+    border-radius: 2em;
+    float:right;
+    padding:10rpx 25rpx;
+    font-size:20rpx;
+}
