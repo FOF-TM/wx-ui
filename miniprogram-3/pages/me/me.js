@@ -83,4 +83,5 @@ Page({
         url: '/pages/setting/setting',
       })
   },
+
 })
