@@ -1,0 +1,25 @@
+<!--pages/setting/setting.wxml-->
+<view class="container">
+    <view style="background:white;padding:25rpx 0">
+    <view class="showNumber"> 
+        <text class="textType">修改手机号：</text>
+        <input bindinput = "inputTele" style="float:left" value="{{testInfo.tele}}"></input>
+        <view class="buttonItemType1" data-id="{{index}}" bindtap="confirmTele">确认</view>
+      </view>
+      <view class="addressTitle">
+        <text>修改常用地址：</text>
+        <view class="buttonType" bindtap="add">添加新的地址</view>
+      </view>
+      <view class="showAddress">   
+        <view class="addressItem" wx:for="{{testInfo.addr}}" wx:key="index">
+            <text class="textType">常用地址{{index+1}}：</text>
+            <input bindinput="input" data-id="{{index}}" style="float:left; width:300rpx" value="{{item.location}}"></input>
+            <view>
+            <view class="buttonItemType2" data-id="{{index}}" bindtap="delete">删除</view>
+            <view class="buttonItemType1" data-id="{{index}}" bindtap="confirm">确认</view>
+            </view>
+          </view>
+    </view>
+    </view>
+</view>
+

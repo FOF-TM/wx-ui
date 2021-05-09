@@ -14,15 +14,18 @@
         <text class="userinfo-gender">漂亮小姐姐一枚</text>
       </block>
       <view class="showNumber"> 
-        <text>  手机号：</text>
-        <text>{{testInfo.phoneNumber}}</text>
+        <text>手机号：</text>
+        <text>{{testInfo.tele}}</text>
       </view>
       <view class="showAddress"> 
-        <text>收货地址：</text>
-        <text>{{testInfo.address[0]}}</text>
+        <text>常用地址：</text>
+        <text>{{testInfo.addr[0].location}}</text>
       </view>
-      <button class="historyRecords" bindtap="historyRecordsTap">历史记录</button>
-      <button class="setting" bindtap="settingTap">设置</button>
+      <view class="funInfo">
+      <view class="historyRecordsTake" bindtap="historyRecordsTake">接单记录<view style="float:right" > > </view></view>
+      <view class="historyRecordsOrder" bindtap="historyRecordsOrder">下单记录<view style="float:right" > > </view></view>
+      <view class="setting" bindtap="setting">设置<view style="float:right" > > </view></view>
+      </view>
     </block>
   </view>
 </view>
