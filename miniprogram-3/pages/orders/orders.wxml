@@ -1,14 +1,22 @@
 <view style="padding:0rpx 25rpx; background: #f5f3f3;">
   <scroll-view class="scroll-list" 
   scroll-y="true" 
-  refresher-enabled="true"
   enable-back-to-top="true"
   bindrefresherrefresh="onPullDownRefresh"
   bindscrolltolower="onReachBottom">
     <view wx:for="{{ dates }}" wx:key="*this">
       <view class="date">{{ item }}</view>
-      <block wx:for="{{ orderList[item] }}" wx:key="id">
-        <item1 content="{{ item.content }}" uid="{{ item.id }}" date="{{ item.date }}" wx:if="*this.tag"></item1>
+      <block wx:for="{{ orderList[item] }}" wx:key="index">
+        <item1  tele="{{ item.buyer_tele }}"
+                stuff_addr="{{ item.stuff_address }}"
+                receive_addr="{{ item.receive_address }}"
+                key="{{ item.id }}" 
+                uid="{{ item.id }}" 
+                date="{{ item.timestamp }}"
+                weight="{{ item.stuff_weight }}"
+                comments="{{ item.comments }}"
+                number="{{ item.stuff_number }}"
+                amount="{{ item.amount }}"></item1>
       </block>
     </view>
   </scroll-view>

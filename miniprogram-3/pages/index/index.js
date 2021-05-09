@@ -1,48 +1,72 @@
-// index.js
-// 获取应用实例
-const app = getApp()
-
 Page({
-  data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
-  },
-  // 事件处理函数
-  bindViewTap() {
+  f0:function(event){
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '/pages/push/push',
     })
   },
-  onLoad() {
-    if (wx.getUserProfile) {
-      this.setData({
-        canIUseGetUserProfile: true
-      })
-    }
-  },
-  getUserProfile(e) {
-    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-    wx.getUserProfile({
-      desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
+  f1:function(event){
+    wx.navigateTo({
+      url: '/pages/pull/pull',
     })
   },
-  getUserInfo(e) {
-    // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-    console.log(e)
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+  GetTeleNumber:function(){
+    wx.request({
+     url: "http://yuren123.cn:1011/me/tele/update",  //后台接口
+     data:{
+      uuid: getApp().globalData.data.uuid,
+      tele:"13390121840"
+     },   //传递给后台使用的code
+     method:"POST",
+     success:function(resa){
+       console.log(resa);
+     }
     })
-  }
+ },
+
+ getUserProfile: function() {
+   wx.getUserProfile({
+     desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+     success: (res) => {
+       console.log("123");
+       console.log(res.rawData);
+       this.setData({
+         rawData: res.rawData,
+         signature: res.signature,
+         userInfo: res.userInfo,
+       })
+       wx.login({
+         success: res => {
+           var that = this
+           wx.request({
+             url: "http://yuren123.cn:1011/auth/login",  //后台接口
+             data:{
+               "code": res.code,
+               "appid": "wxa492b8f990c466b7",
+               "secret": "aa9d35aeef00ee1e9757c4bfb5e96499",
+               "raw_data": this.data.rawData,
+               "signature": this.data.signature
+             },   //传递给后台使用的code
+             method:"POST",
+             success:function(resa){
+               console.log(resa);
+               // that.data.uuid = res.uuid
+               wx.request({
+                 url: "http://yuren123.cn:1011/test/loginTest",
+                 method: "POST",
+                 data: {
+                   uuid: resa.data.uuid
+                 },
+                 success: function(res) {
+                   getApp().globalData.data = resa.data;
+                   console.log(resa.data.uuid);
+                   console.log(res);
+                 }
+               })
+             }
+           })
+         }
+       })
+     }
+   })
+ },
 })

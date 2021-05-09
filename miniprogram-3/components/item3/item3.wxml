@@ -1,0 +1,15 @@
+<view class="item-container" wx:if="{{ tag }}">
+  <view class="item">
+    <view class="content" bindtap="info">
+      <view>数目：{{ amount }}</view>
+      <view>物品重量：{{ weight }}</view>  
+      
+
+      <view>起始地址：{{ start }}</view>
+      <view>终点：{{ finish }}</view>
+      <view>金额：{{ money }}</view>
+
+    </view>
+    <div class="btn" bindtap="finish">接单</div>
+  </view>
+</view>
